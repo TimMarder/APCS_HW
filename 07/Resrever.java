@@ -23,7 +23,7 @@ public class Resrever {
 	
 	
 	
-	public static String reverse(String s){
+	public static String reverse(String s){ //method to reverse string and runs in linear time [ O(n) ]
 		String retstr = ""; //The final reversed string that is going to be returned
 		for(int i = s.length() - 1; i >= 0; i--){ //for loop to go through the letters in the String starting from the back
 			retstr += s.substring(i); //adds the current letter that the for loop is at to the final string
