@@ -1,0 +1,37 @@
+Tim Marder
+APCS2 pd02
+HW#9 -- Yaaasss Queens
+2018-02-27
+
+2x2:
+No possible solutions because after placing the 1st queen, there is no possible space where the second queen can be placed without violating
+the chess rules of the queens killing each other.
+
+3x3:
+No possible solutions because no possible way of placing third queen in any possible way without having one of the first 2 queens killing it.
+
+4x4:
+2 possible solutions because it is possible to place 4 queens around the board without violating the chess rules of the queens killing each
+other. There is one orientation which can be flipped across the y-axis to provide the second solution.
+
+5x5:
+I have made lots of tests for this case and came up with 10+ solutions. I was not able to find the exact number because after about 12 it
+started to become hard to keep track of the orientations but I am sure that there are way more possible solutions.
+
+6x6:
+Just like for the 4x4 case, I was only able to find 2 solutions. This also had one working orientation which could be flipped across the
+y-axis, giving the second solution.
+
+7x7:
+Just like the 5x5 case, there are definitely 10+ combinations, even more than 5x5. This is where I realized that an odd number x odd number
+board is easier to find solutions on because there is less symmetry to deal with where a queen could potentially kill a queen across the
+board without you even realizing until the very end.
+
+8x8:
+To my surprise, there are actually also 10+ possible solutions for this case. At first, just like in class, I attempted to follow the knight
+move method to try to find a solution but continuously kept failing. I then decided to try something new, by changing up the typical 1 up/
+2 over or 2 up/ 1 over rule and started skipping more than 2 spaces in different directions. Eventually, I was able to come up with over 10
+solutions and I think that there might even be more solutions to this case than the 7x7. I also realized that in the previous cases, most of
+the solutions included a pattern that repeated itself in each row/column, but in most (if not all) of the solutions in this case, the amount
+of spaces between queens in both rows and columns changed a lot. I was shocked because at first I trully believed that there is absolutely
+no possible way for there to be a solution to this problem, and then learned that there are more than 10.
