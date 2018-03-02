@@ -1,0 +1,114 @@
+Tim Marder
+APCS2 pd02
+HW#11 -- Get on the Bus
+2018-03-01
+
+Step-by-step procedure using pseudocode:
+
+Place first mark at [0,0].
+
+If row <= 4 && col <= 4 {
+	If space at [2 left, 1 up] available 
+		go [2 left, 1 up]
+		mark spot.
+	}
+	else if space at [2 left, 1 down] available {
+		go [2 left, 1 down]
+		mark spot.
+	}
+	else if space at [2 down, 1 right] available {
+		go [2 down, 1 right]
+		mark spot.
+	}
+	else if space at [2 down, 1 left] available {
+		go [2 down, 1 left]
+		mark spot.
+	}
+	else if space at [2 right, 1 down] available {
+		go [2 right, 1 down]
+		mark spot.
+	}
+	else if space at [2 right, 1 up] available {
+		go [2 right, 1 up]
+		mark spot.
+	}
+	else if space at [2 up, 1 left] available {
+		go [2 up, 1 left]
+		mark spot.
+	}
+	else {
+		go [2 up, 1 right].
+		mark spot.
+	}
+}
+if row >= 5 && col <= 4 {
+	If space at [2 down, 1 left] available 
+		go [2 down, 1 left]
+		mark spot.
+	}
+	else if space at [2 down, 1 right] available {
+		go [2 left, 1 right]
+		mark spot.
+	}
+	else if space at [2 right, 1 down] available {
+		go [2 right, 1 down]
+		mark spot.
+	}
+	else {
+		go [2 right, 1 up]
+		mark spot.
+	}
+}
+if row >= 5 && col >= 5 {
+	If space at [2 right, 1 down] available 
+		go [2 right, 1 down]
+		mark spot.
+	}
+	else if space at [2 right, 1 up] available {
+		go [2 right, 1 up]
+		mark spot.
+	}
+	else if space at [2 up, 1 right] available {
+		go [2 up, 1 right]
+		mark spot.
+	}
+	else {
+		go [2 up, 1 left]
+		mark spot.
+	}
+}
+If row <= 4 && col >= 5 {
+	If space at [2 up, 1 right] available 
+		go [2 up, 1 right]
+		mark spot.
+	}
+	else if space at [2 up, 1 left] available {
+		go [2 up, 1 left]
+		mark spot.
+	}
+	else if space at [2 left, 1 up] available {
+		go [2 left, 1 up]
+		mark spot.
+	}
+	else if space at [2 left, 1 down] available {
+		go [2 left, 1 down]
+		mark spot.
+	}
+	else if space at [2 down, 1 right] available {
+		go [2 down, 1 right]
+		mark spot.
+	}
+	else if space at [2 down, 1 left] available {
+		go [2 down, 1 left]
+		mark spot.
+	}
+	else if space at [2 right, 1 up] available {
+		go [2 right, 1 up]
+		mark spot.
+	}
+	else {
+		go [2 right, 1 down].
+		mark spot.
+	}
+}
+		
