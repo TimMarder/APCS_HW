@@ -1,0 +1,60 @@
+Tim Marder
+APCS2 pd02
+HW#14 -- Probing the Depths...
+2018-03-06
+
+  KnightTour execution times:
+  n=5   0.112s    over 10 executions 
+  n=6   0.144s    over 10 executions
+  n=7   0.304s    over 10 executions
+  n=8   0.351s    over 10 executions
+
+Section Uno:
+
+Q1: No, because for some boards, specifically boards that are less
+than 5x5, are impossible to find a tour for. It does not matter if
+the starting position changes, there is simply not enough space to
+work with to be able to find a successful tour.
+
+Q2: Again, no tours will be possible in a chess board of side lengths
+less than 5, but if staying within the 5x5+ range, then yes, it is
+possible to find a closed tour from any starting position. It may
+be harder since now the instructions are more strict and it is
+necessary for the knight to end up on the space that is one move
+away from the starting space, but it is possible.
+
+Q3: I believe that it is obvious to why the execution time increases
+as the length of the board side increases and it's purely because
+the knight as to move through more spaces to find a valid tour. I'm
+not entirely sure if the increase in execution time will always be
+similar to my results and how the execution times would look like if
+I were to test with larger board sizes since I did not have enough
+trials.
+
+Q4: I believe that there is definitely a way that this algorithm
+can be optimized since the algorithm that Rubin and I came up with
+last week makes the knight go through every possible move and ends
+up going back to previous moves a lot since there are so many
+possibilities to screw up. There has to be a way that the knight
+can think of the next couple valid moves that will not require
+for it to go back several moves just to start moving by another path.
+
+Section Deux:
+
+My algorithm for finding my way out of a maze is similar to the one
+Rubin and I came up with for the Knight's Tour problem. From the
+starting point of the player (or "hero"), it will look at all the
+possible moves that it could make (on the path, not the walls 
+obviously). Unlike our algorithm for Knight's Tour, it will choose
+the space where there will be the MOST amount of moves after going
+to that space. This is because most maizes are designed to have the 
+path towards the exit the longest and hardest, so by using common sense,
+the hero will take the hardest path first. Once the hero takes the
+longest path and it ends up not leading to the exit, it will go back
+several steps just like in the algorithm for Knight's Tour to the point
+where it is possible to go by another path. This algorithm is good
+because if the exit ends up being on the long path, the player basically
+wins on first try, but even if it isn't, it is better than trying all
+the short paths first only to find out that the longest path has the
+exit, because now the hero has all the shorter paths to try out, which
+is less time consuming.
