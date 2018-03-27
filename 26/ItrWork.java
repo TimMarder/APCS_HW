@@ -1,3 +1,11 @@
+/*
+Tim Marder
+APCS2 pd02
+HW#26 -- DeIteratour
+2018-03-27
+*/
+
+
 /*****************************************************
  * class ItrWork -- skeleton
  * Allows for familiarization with iterators
@@ -7,16 +15,15 @@ import java.util.List;
 import java.util.Iterator;
 import java.util.ArrayList;
 
-public class ItrWork 
-{
+public class ItrWork {
     //using FOREACH loop
     //returns a boolean to indicate whether key is present in L
     public static boolean foundA( Integer key, List<Integer> L ) {
 
 	    for( int k : L ) {
-		if ( k == key ) {
-		    return true;
-		}
+			if ( k == key ) {
+				return true;
+			}
 	    }
 	    return false;
 	    
@@ -26,13 +33,13 @@ public class ItrWork
     //returns a boolean to indicate whether key is present in L
     public static boolean foundB( Integer key, List<Integer> L ) { 
 
-	Iterator it = L.iterator();
-	while( it.hasNext()) {
-	    if( it.next() == key ) {
-		return true;
-	    }
-	}
-	return false;
+		Iterator it = L.iterator();
+		while( it.hasNext()) {
+			if( it.next() == key ) {
+				return true;
+			}
+		}
+		return false;
 	
     }
 
@@ -40,12 +47,12 @@ public class ItrWork
     //returns a list containing the odd numbers in L
     public static List<Integer> oddsA( List<Integer> L ) {
 
-	ArrayList<Integer> Odds = new ArrayList<Integer>();
+		ArrayList<Integer> Odds = new ArrayList<Integer>();
 
 	    for( int k : L ) {
-		if ( k % 2 == 1 ) {
-		    Odds.add( k );
-		}
+			if ( k % 2 == 1 ) {
+				Odds.add( k );
+			}
 	    }
 	    return Odds;
 	    
@@ -55,25 +62,61 @@ public class ItrWork
     //returns a list containing the odd numbers in L
     public static List<Integer> oddsB( List<Integer> L ) {
 
-	Iterator it = L.iterator();
-	while ( it.hasNext()) {
-	    if ( (int) it.next() % 2 == 0 ) {
-		it.remove();
-	    }
-	}
-	return L;
+		Iterator it = L.iterator();
+		while ( it.hasNext()) {
+			if ( (int) it.next() % 2 == 0 ) {
+				it.remove();
+			}
+		}
+		return L;
 
 	
     }
     
     //explicitly using an iterator
     //modifies L s.t. it contains no evens
-    public static void removeEvens( List<Integer> L ) 
-    { 
-	/*** YOUR IMPLEMENTATION HERE ***/
+    public static void removeEvens( List<Integer> L ) { 
+	
+		Iterator it = L.iterator();
+		while ( it.hasNext()) {
+			if ( (int) it.next() % 2 == 0 ) {
+				it.remove();
+			}
+		}
+	
     }
 
-
+	public static void foreachPrint( List<Integer> L ) {
+		
+		String contents = "";
+		contents += "[";
+		for ( int k : L ) {
+			contents += k;
+			contents += ", ";
+		}
+		contents = contents.substring(0, contents.length() - 2);
+		contents += "]";
+		
+		System.out.println( contents );
+		
+	}
+	
+	public static void iteratorPrint( List<Integer> L ) {
+		
+		String contents = "";
+		contents += "[";
+		Iterator it = L.iterator();
+		while( it.hasNext() ) {
+			contents += (int) it.next();
+			contents += ", ";
+		}
+		contents = contents.substring(0, contents.length() - 2);
+		contents += "]";
+		
+		System.out.println( contents );
+		
+	}
+	
     public static void main( String [] args ) 
     {
 	//var type: List   obj type: ArrayList	
@@ -85,11 +128,18 @@ public class ItrWork
 
 	// TASK: write code to print the contents of ArrayList L...
 
+	System.out.println("\n");
 	
 	// a) using a FOREACH loop
+	
+	System.out.println("Printing contents of list L using a foreach loop...");
+	foreachPrint( L );
 
-
+	System.out.println("\n");
 	// b) explicitly using an iterator
+	
+	System.out.println("Printing contents of list L using an iterator...");
+	iteratorPrint( L );
 
 
 	System.out.println("\nTesting foundA...");
@@ -114,11 +164,11 @@ public class ItrWork
 	List<Integer> B = oddsB(L);
 	for( int n : B ) System.out.println(n);
 
-/*~~~~~~~~~~~~~~~m~o~v~e~~m~e~~d~o~w~n~~~~~~~~~~~~~~
 	
 	System.out.println("\nTesting removeEvens...");
 	removeEvens(L);
 	for( int n : L ) System.out.println(n);
+	/*~~~~~~~~~~~~~~~m~o~v~e~~m~e~~d~o~w~n~~~~~~~~~~~~~~
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
     }//end main
