@@ -1,0 +1,18 @@
+/*
+Tim Marder
+APCS2 pd02
+HW32 --
+2018-04-12
+*/
+
+/*******************
+ *  Class ALStack  *
+ ******************/
+
+import java.util.ArrayList;
+
+public class ALStack implements Stack<PANCAKE> {
+
+    
+
+}
