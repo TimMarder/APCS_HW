@@ -1,7 +1,7 @@
 /*
 Tim Marder
 APCS2 pd02
-HW#32 --
+HW#32 -- Leon Leonwood Stack
 2018-04-12
 */
 
@@ -16,13 +16,13 @@ public class ALStack implements Stack<PANCAKE> {
     private ArrayList<PANCAKE> _stack;
     private int _stackSize;
 
-    public ALStack(int size) {
-	_stack = new ArrayList<PANCAKE>[size];
+    public ALStack() {
+	_stack = new ArrayList<PANCAKE>();
 	_stackSize = 0;
     }
 
     public boolean isEmpty() {
-
+		return _stackSize == 0;
     }
 
     public PANCAKE peek() {
