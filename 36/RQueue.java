@@ -1,3 +1,11 @@
+/*
+Team Gatorade -- Tim Marder & Andrew Shao
+Tim Marder
+APCS2 pd02
+HW#36 -- Now Let’s Consider You Lot at Fake Terry’s
+2018-04-17
+*/
+
 /*****************************************************
  * class RQueue
  * A linked-list-based, randomized queue
@@ -32,9 +40,9 @@ public class RQueue<T> implements Queue<T>
   }//end default constructor
 
 
-    public void enqueue( T enQVal ) {
+  public void enqueue( T enQVal ) {
 
-	LLNode<T> temp = new LLNode<T>( x , null );
+	LLNode<T> temp = new LLNode<T>( enQVal , null );
 
 	if ( isEmpty() ) {
 	    _front = temp;
@@ -51,47 +59,72 @@ public class RQueue<T> implements Queue<T>
   // assume _queue ! empty
   public T dequeue() {
 
-      
+      if ( isEmpty() ) {
+		  return null;
+	  }
+	  sample();
+	  return peekFront();
       
   }//end dequeue()
 
 
-  public T peekFront() 
-  {
+  public T peekFront() {
 
+	T rtrn = _front.getValue();
+	_front = _front.getNext();
+	
+	if ( isEmpty() ) {
+		_end = null;
+	}
+	_size--;
+	
+	return rtrn;
+  
   }
 
 
   /******************************************
    * void sample() -- a means of "shuffling" the queue
    * Algo:
-   * ...
-   * 
+   * Take the front value out of the queue and enqueue
+   * it back onto the end, repeat this a randomly
+   * generated number of times.
    ******************************************/
-  public void sample () 
-  {
+  public void sample () {
 
+	int thing = (int) (Math.random() * _size) - 1;
+	
+	for (int i = 0 ; i < thing ; i++) {
+		enqueue( peekFront() );
+	}
+  
   }//end sample()
 
 
-  public boolean isEmpty() 
-  {
+  public boolean isEmpty() {
 
-  } //O(?)
+	return _front == null;
+  
+  } //O(1)
 
 
     // print each node, separated by spaces
-  public String toString() 
-  { 
+  public String toString() { 
 
+	String result = "";
+	LLNode<T> temp = _front;
+	while ( temp != null ) {
+		result += temp.getValue() + " ";
+		temp = temp.getNext();
+	}
+	return result;
+  
   }//end toString()
 
 
 
   //main method for testing
-  public static void main( String[] args )
-  {
-    /*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
+  public static void main( String[] args ) {
 
       Queue<String> PirateQueue = new RQueue<String>();
 
@@ -116,8 +149,6 @@ public class RQueue<T> implements Queue<T>
 
       System.out.println("\nnow dequeuing fr empty queue..."); 
       System.out.println( PirateQueue.dequeue() );
-
-      ^~~~~~~~~~~~~~~~AWESOME~~~~~~~~~~~~~~~^*/
 
   }//end main
 
